@@ -18,7 +18,3 @@ def get_users():
 def get_states():
     with open("db.json", "r") as file:
         return file.read()
-
-
-app.run(port=5000)
-
