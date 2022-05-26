@@ -1,15 +1,15 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 
 
-@app.get("/home")
+@app.get("/")
 def home():
-    return "<h1>Olá</h1>"
+    return render_template("index.htm")
 
 
-@app.get("/victor")
+@app.get("/user/victor")
 def get_users():
     return {"nome": "Victor", "idade": 28}
 
@@ -18,3 +18,6 @@ def get_users():
 def get_states():
     with open("db.json", "r") as file:
         return file.read()
+
+
+app.run(debug=True, port=33507)
