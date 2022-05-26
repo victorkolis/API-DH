@@ -4,12 +4,12 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.get("/")
+@app.get("/home")
 def home():
     return "<h1>Olá</h1>"
 
 
-@app.get("/user/victor")
+@app.get("/victor")
 def get_users():
     return {"nome": "Victor", "idade": 28}
 
